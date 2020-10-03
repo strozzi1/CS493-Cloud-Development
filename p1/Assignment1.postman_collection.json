@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "0ddbb610-a4d3-4cee-82a8-611e0ea78620",
+		"name": "Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "View all businesses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new business",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"business_id\": \"99\",\r\n        \"owner_id\": \"100\",\r\n        \"name\": \"Food Place\",\r\n        \"address\": \"100 69th St.\",\r\n        \"city\": \"Seaside\",\r\n        \"state\": \"OR\",\r\n        \"zipcode\": \"97138\",\r\n        \"phone\": \"503-738-0000\",\r\n        \"category\": \"Food\",\r\n        \"website\": \"http://www.foodinseaside.com\",\r\n        \"email\": \"josh@website.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						""
+					]
+				},
+				"description": "We add a new business with the app.post call"
+			},
+			"response": []
+		},
+		{
+			"name": "Modify business",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"business_id\": \"01\",\r\n        \"owner_id\": \"96\",\r\n        \"name\": \"Computer Place\",\r\n        \"address\": \"100 69th St.\",\r\n        \"city\": \"Seaside\",\r\n        \"state\": \"OR\",\r\n        \"zipcode\": \"97138\",\r\n        \"phone\": \"503-738-0000\",\r\n        \"category\": \"Electronics\",\r\n        \"website\": \"http://www.foodinseaside.com\",\r\n        \"email\": \"josh@website.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/72",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"72"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new review to specific business",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"review_id\": \"1234\",\r\n        \"business_id\": \"72\",\r\n        \"user_id\": \"2\",\r\n        \"stars\": 2,\r\n        \"pricing\": 2,\r\n        \"review\": \"This place isn't the best, nor the worst!\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/72/reviews",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"72",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View a specific business via id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses/72",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"72"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/reviews",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a business listing",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses/72",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"72"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/reviews/9001",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"9001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all businesses of a single owner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/2/businesses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"2",
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all reviews of a single owner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/96/reviews",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"96",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify specific user's review",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"review_id\": \"9001\",\r\n        \"business_id\": \"01\",\r\n        \"user_id\": \"96\",\r\n        \"stars\": 1,\r\n        \"pricing\": 1,\r\n        \"review\": \"This review was modified!\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/96/reviews/9001",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"96",
+						"reviews",
+						"9001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all photos of a single owner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/96/photos",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"96",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/photos",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new photo to specific business",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"photo_id\": \"256\",\r\n        \"business_id\": \"1234\",\r\n        \"user_id\": \"2\",\r\n        \"caption\": \"This sure is a place, and it does have things!\",\r\n        \"image_url\": \"https://img.cleanlinesurf.com/media/cleanline-surf-shop-seaside-oregon.jpg\"\r\n\t\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/72/photos",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"72",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a specific users specific photo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/96/photos/420",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"96",
+						"photos",
+						"420"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify specific user's photo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"photo_id\": \"420\",\r\n        \"business_id\": \"01\",\r\n        \"user_id\": \"96\",\r\n        \"caption\": \"Just look at this modified image!\",\r\n        \"image_url\": \"https://live.staticflickr.com/3097/2693642660_ca0dbe8fe2_b.jpg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/96/photos/420",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"96",
+						"photos",
+						"420"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,92 @@
+{
+"businesses": [
+    {
+        "business_id": "01",
+        "owner_id": "96",
+        "name": "The Habedashery",
+        "address": "420 69th St.",
+        "city": "Seaside",
+        "state": "OR",
+        "zipcode": "97138",
+        "phone": "503-738-9373",
+        "category": "Clothing",
+        "website": "http://www.twitch.tv/thesozz",
+        "email": "strozzij@oregonstate.edu"
+    },
+    {
+        "business_id": "72",
+        "owner_id": "96",
+        "name": "The Store",
+        "address": "1000 10th St.",
+        "city": "Corvallis",
+        "state": "OR",
+        "zipcode": "97333",
+        "phone": "541-415-4541",
+        "category": "Stuff",
+        "website": "http://www.twitch.tv/ninja",
+        "email": "brozziyay@oregonstate.edu"
+    },
+    {
+        "business_id": "1234",
+        "owner_id": "2",
+        "name": "Cleanline",
+        "address": "14 Number St.",
+        "city": "Big City",
+        "state": "CO",
+        "zipcode": "11111",
+        "phone": "666-867-5309",
+        "category": "Gear",
+        "website": "http://www.cleanline.com",
+        "email": ""
+    }
+    
+],
+"users": [
+    {
+        "user_id": "96",
+        "username": "thesozz"
+            
+    },
+    {
+        "user_id": "2",
+        "username": "Jack"
+            
+    }
+],
+"reviews":[
+    {
+        "review_id": "9001",
+        "business_id": "01",
+        "user_id": "96",
+        "stars": 5,
+        "pricing": 2,
+        "review": "This place is the absolute best!"
+    },
+    {
+        "review_id": "9002",
+        "business_id": "01",
+        "user_id": "2",
+        "stars": 1,
+        "pricing": 3,
+        "review": "This place is the absolute worst!"
+    },
+    {
+        "review_id": "905",
+        "business_id": "1234",
+        "user_id": "96",
+        "stars": 4,
+        "pricing": 4,
+        "review": "This place IS!"
+    }
+],
+"photos": [
+    {
+        "photo_id": "420",
+        "business_id": "01",
+        "user_id": "96",
+        "caption": "Just look at the stuff they have!",
+        "image_url": "https://www.parisperfect.com/blog/wp-content/uploads/2015/09/sajou-8.jpg"
+    }
+]
+
+}

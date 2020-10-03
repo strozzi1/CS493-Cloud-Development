@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    image: assignment-4-api
+    restart: on-failure
+    ports:
+      - 8000:8000
+    environment:
+      MONGO_DATABASE: ${MONGO_DATABASE}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+      RABBITMQ_HOST: rabbitmq
+    depends_on:
+      - mongodb
+      - rabbitmq
+
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+      - ./db-init/01-db-init.js:/docker-entrypoint-initdb.d/01-db-init.js
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: "rabbitmq-server"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment: 
+      MONGO_DATABASE: ${MONGO_DATABASE}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+  
+
+volumes:
+  mongo-data:
